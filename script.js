@@ -9,5 +9,12 @@ const searchHandle = () => {
     const url = `https://www.theaudiodb.com/api/v1/json/2/search.php?s=${input}`
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => searchResult(data.artists))
+}
+// show search result 
+const searchResult = (data) => {
+    // data.forEach(artist => {---------type error data is instead of data.artists
+    data.forEach(artist => {
+        console.log(artist);
+    });
 }
