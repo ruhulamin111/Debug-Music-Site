@@ -11,10 +11,12 @@ const searchHandle = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => searchResult(data.artists))
+    inputText.value = '';
 }
 // show search result 
 const searchResult = (data) => {
     const artistsContainer = getElement('artists');
+    artistsContainer.innerHTML = '';
     // data.forEach(artist => {---------type error data is instead of data.artists
     data.forEach(artist => {
         console.log(artist);
@@ -29,8 +31,8 @@ const searchResult = (data) => {
         </div>
         <div class="info-container">
             <h1>${artist.strArtist}</h1>
-            <p>Country: ${artist.strCountry}</p>
-            <p>Style: ${artist.strStyle}</p>
+            <p>Country: ${artist.strCountry ? artist.strCountry : 'Not available'}</p>
+            <p>Style: ${artist.strStyle ? artist.strStyle : 'Not available'}</p>
         </div>        
         <button class="album-button">
             <i class="fa-solid fa-compact-disc"></i>
