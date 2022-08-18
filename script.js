@@ -54,9 +54,14 @@ const albumResult = (albums) => {
     albumsContainer.innerHTML = '';
     albums.forEach(album => {
         const div = document.createElement('div');
-        // div.classList.add('');
-        div.innerHTML = `
-        <h1>${album.strAlbum}</h1>
+        div.classList.add('album');
+        div.innerHTML = `        
+        <div class="album-image-container">
+            <img src="${album.strAlbumThumb}" alt="">
+        </div>
+        <div class="album-name">
+            <h3>${album.strAlbum}</h3>
+        </div>
 
         `;
         albumsContainer.appendChild(div);
