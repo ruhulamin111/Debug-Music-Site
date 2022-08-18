@@ -22,7 +22,7 @@ const searchResult = (artists) => {
     const artistsContainer = getElement('artists');
     artistsContainer.innerHTML = '';
     // data.forEach(artist => {---------type error data is instead of data.artists
-    artists.forEach(artist => {
+    artists?.forEach(artist => {
         const div = document.createElement('div');
         div.classList.add('artist-card');
         // <img src="strArtistThumb" alt="">------referenceError strArtistThum instead of artist.strArtistThumb
