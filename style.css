@@ -1,6 +1,6 @@
 :root {
-  --purple: #9c75f4;
-  --dark-gray: #141414;
+  --purple: #118CD9;
+  --dark-gray: #ebe9e9;
   --light-gray: #a5a6a6;
   --motion: all ease-in-out 300ms;
 }
@@ -58,7 +58,7 @@ header h1 {
 }
 
 .search-container button:hover {
-  background: #824ff8;
+  background: #282B59;
   color: var(--dark-gray);
 }
 
@@ -158,10 +158,12 @@ header h1 {
   cursor: pointer;
   z-index: 999;
 }
+
 .artist-card:hover .album-button {
   width: calc(100% - 20px);
   border: 1px solid white;
 }
+
 .album-button p {
   height: 100%;
   width: 100%;
@@ -169,6 +171,7 @@ header h1 {
   justify-content: center;
   align-items: center;
 }
+
 .artist-card:hover .button-title {
   opacity: 1;
   color: white;
