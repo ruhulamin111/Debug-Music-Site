@@ -19,7 +19,6 @@ const searchResult = (artists) => {
     artistsContainer.innerHTML = '';
     // data.forEach(artist => {---------type error data is instead of data.artists
     artists.forEach(artist => {
-        console.log(artist);
         const div = document.createElement('div');
         div.classList.add('artist-card');
         // <img src="strArtistThumb" alt="">------referenceError strArtistThum instead of artist.strArtistThumb
@@ -51,5 +50,15 @@ const albumHandle = (id) => {
 }
 // album details reuslt 
 const albumResult = (albums) => {
-    console.log(albums);
+    const albumsContainer = getElement('albums');
+    albumsContainer.innerHTML = '';
+    albums.forEach(album => {
+        const div = document.createElement('div');
+        // div.classList.add('');
+        div.innerHTML = `
+        <h1>${album.strAlbum}</h1>
+
+        `;
+        albumsContainer.appendChild(div);
+    });
 }
