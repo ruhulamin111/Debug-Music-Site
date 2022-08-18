@@ -7,6 +7,10 @@ const getElement = (id) => {
 const searchHandle = () => {
     const inputText = getElement('input');
     const input = inputText.value;
+    if (!input) {
+        alert('Please input a artist name')
+        return;
+    }
     const url = `https://www.theaudiodb.com/api/v1/json/2/search.php?s=${input}`
     fetch(url)
         .then(res => res.json())
@@ -62,7 +66,6 @@ const albumResult = (albums) => {
         <div class="album-name">
             <h3>${album.strAlbum}</h3>
         </div>
-
         `;
         albumsContainer.appendChild(div);
     });
