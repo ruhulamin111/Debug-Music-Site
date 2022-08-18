@@ -34,11 +34,22 @@ const searchResult = (data) => {
             <p>Country: ${artist.strCountry ? artist.strCountry : 'Not available'}</p>
             <p>Style: ${artist.strStyle ? artist.strStyle : 'Not available'}</p>
         </div>        
-        <button class="album-button">
+        <button onclick="albumHandle('${artist.idArtist}')" class="album-button">
             <i class="fa-solid fa-compact-disc"></i>
             <p class="button-title">Albums</p>
         </button>
         `;
         artistsContainer.appendChild(div);
     });
+}
+// album details handle 
+const albumHandle = (id) => {
+    const url = `https://theaudiodb.com/api/v1/json/2/artist.php?i=${id}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => albumResult(data.artists))
+}
+// album details reuslt 
+const albumResult = (data) => {
+
 }
