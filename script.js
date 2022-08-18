@@ -14,11 +14,11 @@ const searchHandle = () => {
     inputText.value = '';
 }
 // show search result 
-const searchResult = (data) => {
+const searchResult = (artists) => {
     const artistsContainer = getElement('artists');
     artistsContainer.innerHTML = '';
     // data.forEach(artist => {---------type error data is instead of data.artists
-    data.forEach(artist => {
+    artists.forEach(artist => {
         console.log(artist);
         const div = document.createElement('div');
         div.classList.add('artist-card');
@@ -44,12 +44,12 @@ const searchResult = (data) => {
 }
 // album details handle 
 const albumHandle = (id) => {
-    const url = `https://theaudiodb.com/api/v1/json/2/artist.php?i=${id}`
+    const url = `https://theaudiodb.com/api/v1/json/2/album.php?i=${id}`
     fetch(url)
         .then(res => res.json())
-        .then(data => albumResult(data.artists))
+        .then(data => albumResult(data.album))
 }
 // album details reuslt 
-const albumResult = (data) => {
-
+const albumResult = (albums) => {
+    console.log(albums);
 }
