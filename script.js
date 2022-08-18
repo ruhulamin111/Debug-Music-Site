@@ -20,10 +20,11 @@ const searchResult = (data) => {
         console.log(artist);
         const div = document.createElement('div');
         div.classList.add('artist-card');
+        // <img src="strArtistThumb" alt="">------referenceError strArtistThum instead of artist.strArtistThumb
         div.innerHTML = `
         <div class="image-container">
             <div class="image-container-inner">
-                <img src="" alt="">
+            <img src="${artist.strArtistThumb ? artist.strArtistThumb : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}" alt="">
             </div>
         </div>
         <div class="info-container">
